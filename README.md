@@ -21,6 +21,9 @@
 
 
 
+## 数据库表结构（SQL Server）
+
+```sql
 -- 创建订单数据表
 CREATE TABLE 读取OTA平台订单 (
     -- 自增主键
@@ -61,8 +64,9 @@ CREATE INDEX idx_平台 ON 读取OTA平台订单(平台);
 CREATE INDEX idx_订单状态 ON 读取OTA平台订单(订单状态);
 CREATE INDEX idx_入住人 ON 读取OTA平台订单(入住人);
 
-底价构成s：指多天的底价，按顺序。
-早餐s：指多天的早餐信息，按顺序。
+字段说明
+底价构成 s：多天的底价按顺序记录
+早餐 s：多天的早餐信息按顺序记录
 
 使用说明：
 美团点击详情，或者携程点击订单，程序会自动添加进数据库。（只有点击了才会添加）
@@ -74,5 +78,6 @@ CREATE INDEX idx_入住人 ON 读取OTA平台订单(入住人);
 
 运行后如想退出，右下角小图标。
 
-打包exe #pip install pyinstaller -i https://mirrors.aliyun.com/pypi/simple/
-pyinstaller --onefile --noconsole order2mssql.py
+打包exe 
+#pip install pyinstaller -i https://mirrors.aliyun.com/pypi/simple/
+pyinstaller --onefile --windowed order2mssql.py
